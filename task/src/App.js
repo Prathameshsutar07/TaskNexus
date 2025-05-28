@@ -3,11 +3,11 @@ import axios from "axios";
 import { saveAs } from "file-saver";
 import { FaFilter, FaPlus, FaDownload, FaComment,FaTimes,FaDelete } from "react-icons/fa";
 import Lottie from "lottie-react";
-import checkAnimation from "../animations/check.json";
-import progressAnimation from "../animations/progress.json";
-import pendingAnimation from "../animations/pending.json";
-import addtaskAnimation from "../animations/addtask.json";
-import notFoundAnimation from "../animations/notfound.json";
+import checkAnimation from "./animations/check.json";
+import progressAnimation from "./animations/progress.json";
+import pendingAnimation from "./animations/pending.json";
+import addtaskAnimation from "./animations/addtask.json";
+import notFoundAnimation from "./animations/notfound.json";
 
 
 
