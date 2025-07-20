@@ -9,6 +9,7 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.10.0",
+    "cros": "^1.1.0",
     "cross-env": "^7.0.3",
     "file-saver": "^2.0.5",
     "lottie-react": "^2.4.1",
@@ -19,10 +20,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "npx react-scripts start",
+    "build": "npx react-scripts build",
+    "test": "npx react-scripts test",
+    "eject": "npx react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +43,7 @@
       "last 1 safari version"
     ]
   },
+  
   "devDependencies": {
     "tailwindcss": "^3.4.17"
   }

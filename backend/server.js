@@ -10,5 +10,5 @@ app.use(cors());
 app.use('/api', taskRoutes);
 
 mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(3000, () => console.log('Server running on port 5000')))
+  .then(() => app.listen(process.env.PORT, () => console.log('Server running on port', process.env.PORT)))
   .catch(err => console.log(err));

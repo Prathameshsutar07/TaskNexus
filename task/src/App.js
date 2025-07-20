@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { saveAs } from "file-saver";
-import { FaFilter, FaPlus, FaDownload, FaComment,FaTimes,FaDelete } from "react-icons/fa";
+import {FaPlus,FaTimes} from "react-icons/fa";
 import Lottie from "lottie-react";
 import checkAnimation from "./animations/check.json";
 import progressAnimation from "./animations/progress.json";
@@ -14,7 +14,6 @@ import notFoundAnimation from "./animations/notfound.json";
 const TaskManager = () => {
   const [tasks, setTasks] = useState([]);
   const [taskName, setTaskName] = useState("");
-  const [status, setStatus] = useState("Pending");
   const [assignee, setAssignee] = useState("");
   const [ticket, setTicket] = useState("");
   const [filters, setFilters] = useState({ status: "", ticket: "", startDate: "", endDate: "" });
@@ -38,7 +37,7 @@ const TaskManager = () => {
       alert("Task Name, Assignee, and Ticket are required!");
       return;
     }
-    await axios.post("http://localhost:3000/api/tasks", { taskName, status, assignee, ticket });
+    await axios.post("http://localhost:3000/api/tasks", { taskName,assignee, ticket });
     fetchTasks();
     setTaskName("");
     setAssignee("");

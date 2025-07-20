@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "src": "task",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "builds": [
+    { "src": "backend/server.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "task/$1"
+    }
+  ]
+}
