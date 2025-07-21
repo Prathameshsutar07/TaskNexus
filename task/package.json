@@ -2,6 +2,9 @@
   "name": "task",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+  "node": "22.x"
+},  
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@testing-library/dom": "^10.4.0",
@@ -46,8 +49,5 @@
   
   "devDependencies": {
     "tailwindcss": "^3.4.17"
-  },
-  "engines": {
-  "node": "18.x"
-}
+  }
 }
