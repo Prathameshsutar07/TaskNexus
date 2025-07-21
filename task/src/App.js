@@ -8,7 +8,7 @@ import progressAnimation from "./animations/progress.json";
 import pendingAnimation from "./animations/pending.json";
 import addtaskAnimation from "./animations/addtask.json";
 import notFoundAnimation from "./animations/notfound.json";
-
+i
 
 
 const TaskManager = () => {
@@ -28,7 +28,7 @@ const TaskManager = () => {
   }, []);
 
   const fetchTasks = async () => {
-    const response = await axios.get("http://localhost:3000/api/tasks");
+    const response = await axios.get("https://tasknexus-lf7a.onrender.com/api/tasks");
     setTasks(response.data);
   };
 
@@ -37,7 +37,7 @@ const TaskManager = () => {
       alert("Task Name, Assignee, and Ticket are required!");
       return;
     }
-    await axios.post("http://localhost:3000/api/tasks", { taskName,assignee, ticket });
+    await axios.post("https://tasknexus-lf7a.onrender.com/api/tasks", { taskName, assignee, ticket });
     fetchTasks();
     setTaskName("");
     setAssignee("");
@@ -51,7 +51,7 @@ const TaskManager = () => {
     //   comment = prompt("Please enter a comment:");
     //   if (!comment) return;
     // }
-    await axios.put(`http://localhost:3000/api/tasks/${id}`, { status: newStatus });
+    await axios.put(`https://tasknexus-lf7a.onrender.com/api/tasks/${id}`, { status: newStatus });
     fetchTasks();
   };
 
@@ -62,7 +62,7 @@ const TaskManager = () => {
     }
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/tasks/${id}/comment`,
+        `https://tasknexus-lf7a.onrender.com/api/tasks/${id}/comment`,
         { comment: newComment }, // Ensure correct field name
         { headers: { "Content-Type": "application/json" } }
       );
@@ -77,7 +77,7 @@ const TaskManager = () => {
   
   const applyFilters = async () => {
     const query = new URLSearchParams(filters).toString();
-    const response = await axios.get(`http://localhost:3000/api/tasks?${query}`);
+    const response = await axios.get(`https://tasknexus-lf7a.onrender.com/api/tasks?${query}`);
     setTasks(response.data);
   };
 
@@ -87,7 +87,7 @@ const TaskManager = () => {
       const endDate = download.endDate;// Today’s date
   
       const response = await axios.get(
-        `http://localhost:3000/api/tasks/report?startDate=${startDate}&endDate=${endDate}`,
+        `https://tasknexus-lf7a.onrender.com/api/tasks/report?startDate=${startDate}&endDate=${endDate}`,
         { responseType: "blob" } // Correct response type for Excel
       );
   
@@ -121,7 +121,7 @@ const TaskManager = () => {
   };
   const deleteTask = async (id) => {
     if (!window.confirm("Are you sure you want to delete this task?")) return;
-    await axios.delete(`http://localhost:3000/api/tasks/${id}`);
+    await axios.delete(`https://tasknexus-lf7a.onrender.com/api/tasks/${id}`);
     fetchTasks();
   };
 
