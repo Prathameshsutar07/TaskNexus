@@ -8,7 +8,6 @@ import progressAnimation from "./animations/progress.json";
 import pendingAnimation from "./animations/pending.json";
 import addtaskAnimation from "./animations/addtask.json";
 import notFoundAnimation from "./animations/notfound.json";
-i
 
 
 const TaskManager = () => {
